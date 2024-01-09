@@ -18,7 +18,8 @@ app.get("/", (req, res)=>{
     res.json("This is the backend")
 })
 
-app.get("/fashion", (req,res)=>{
+// API for allproducts, add, delete
+app.get("/allproducts", (req,res)=>{
     const q = "SELECT * FROM fashion"
     db.query(q,(err, data)=>{
         if(err) return res.json(err)
@@ -26,7 +27,7 @@ app.get("/fashion", (req,res)=>{
     })
 })
 
-app.post("/fashion", (req,res)=>{
+app.post("/addproducts", (req,res)=>{
     const q = "INSERT INTO fashion (`id`, `name`, `image`, `category`, `new_price`, `old_price`) VALUES(?)";
     const values = [
         req.body.id,
@@ -42,6 +43,18 @@ app.post("/fashion", (req,res)=>{
     })
 })
 
+app.delete("/delete/:id", (req,res)=>{
+    const fashionId = req.params.id;
+    const q = "DELETE FROM fashion WHERE id = ?";
+    db.query(q, [fashionId], (err,data)=>{
+        if(err) return res.json(err);
+        return res.json("Successfully deleted");
+    });
+});
+
+
+
+
 // image storage
 
 const storage = multer.diskStorage({
@@ -53,7 +66,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage})
 
+// Creating upload, images endpoint
 app.use('/images', express.static('upload/images'));
+
 app.post("/upload", upload.single('product'),(req, res)=>{
     res.json({
         success: 1,
