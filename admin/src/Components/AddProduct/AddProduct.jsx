@@ -29,7 +29,7 @@ const AddProduct = () =>{
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch('http://localhost:8800/upload', {
+        await fetch(`http://localhost:8800/upload`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -40,7 +40,7 @@ const AddProduct = () =>{
         if(responseData.success){
             product.image = responseData.image_url;
             console.log(product);
-            await fetch('http://localhost:8800/addproduct', {
+            await fetch(`http://localhost:8800/addproduct`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -49,7 +49,7 @@ const AddProduct = () =>{
                     body:JSON.stringify(product),
             }).then((resp)=>resp.json()).then((data)=>{
             console.log(data);
-            data.success?alert("Product Added"):alert("Failed");
+            data.success ? alert("Product Added"): alert("Failed");
             });
         }
     }
