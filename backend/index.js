@@ -2,8 +2,10 @@ import express from "express";
 import multer from "multer";
 import mysql from "mysql";
 import path from 'path';
+import cors from 'cors';
 
 const app = express() // call express function
+app.use(cors());
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -27,7 +29,7 @@ app.get("/allproducts", (req,res)=>{
     })
 })
 
-app.post("/addproducts", (req,res)=>{
+app.post("/addproduct", (req,res)=>{
     const q = "INSERT INTO fashion (`id`, `name`, `image`, `category`, `new_price`, `old_price`) VALUES(?)";
     const values = [
         req.body.id,
