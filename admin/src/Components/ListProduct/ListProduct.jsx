@@ -14,7 +14,7 @@ const ListProduct = () =>{
     },[])
 
     const removeProd = async (id)=>{
-        await fetch(`http://localhost:8800/delete/${id}`,{
+        await fetch(`http://localhost:8800/deleteproduct/${id}`,{
             method: 'DELETE',
             headers: {
                 Accept: 'application/json',

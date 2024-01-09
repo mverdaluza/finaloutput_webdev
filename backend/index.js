@@ -20,6 +20,34 @@ app.get("/", (req, res)=>{
     res.json("This is the backend")
 })
 
+
+
+
+// image storage
+
+const storage = multer.diskStorage({
+    destination: './upload/images',
+    filename: (req, file, cb)=>{
+        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
+})
+
+const upload = multer({storage:storage})
+
+// Creating upload, images endpoint
+app.use('/images', express.static('upload/images'));
+
+app.post("/upload", upload.single('product'),(req, res)=>{
+    res.json({
+        success: 1,
+        image_url: `http://localhost:8800/images/${req.file.filename}`
+    })
+})
+
+
+
+
+
 // API for allproducts, add, delete
 app.get("/allproducts", (req,res)=>{
     const q = "SELECT * FROM fashion"
@@ -45,7 +73,7 @@ app.post("/addproduct", (req,res)=>{
     })
 })
 
-app.delete("/delete/:id", (req,res)=>{
+app.delete("/deleteproduct/:id", (req,res)=>{
     const fashionId = req.params.id;
     const q = "DELETE FROM fashion WHERE id = ?";
     db.query(q, [fashionId], (err,data)=>{
@@ -54,29 +82,24 @@ app.delete("/delete/:id", (req,res)=>{
     });
 });
 
-
-
-
-// image storage
-
-const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename: (req, file, cb)=>{
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
+app.put("/updateproduct/:id", (req,res)=>{
+    const fashionId = req.params.id;
+    const q = "UPDATE fashion SET name=?, image=?, category=?, new_price=?, old_price=? WHERE id=?";
+    const values = [
+        req.body.name,
+        req.body.image,
+        req.body.category,
+        req.body.new_price,
+        req.body.old_price,
+        fashionId,
+    ];
+    db.query(q, values, (err, data) => {
+        if (err) return res.json(err);
+        return res.json("Successfully updated");
+    });
 })
 
-const upload = multer({storage:storage})
 
-// Creating upload, images endpoint
-app.use('/images', express.static('upload/images'));
-
-app.post("/upload", upload.single('product'),(req, res)=>{
-    res.json({
-        success: 1,
-        image_url: `http://localhost:8800/images/${req.file.filename}`
-    })
-})
 
 
 
