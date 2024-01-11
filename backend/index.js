@@ -46,8 +46,6 @@ app.post("/upload", upload.single('product'),(req, res)=>{
 
 
 
-
-
 // API for allproducts, add, delete
 app.get("/allproducts", (req,res)=>{
     const q = "SELECT * FROM fashion"
@@ -81,24 +79,6 @@ app.delete("/deleteproduct/:id", (req,res)=>{
         return res.json("Successfully deleted");
     });
 });
-
-app.put("/updateproduct/:id", (req,res)=>{
-    const fashionId = req.params.id;
-    const q = "UPDATE fashion SET name=?, image=?, category=?, new_price=?, old_price=? WHERE id=?";
-    const values = [
-        req.body.name,
-        req.body.image,
-        req.body.category,
-        req.body.new_price,
-        req.body.old_price,
-        fashionId,
-    ];
-    db.query(q, values, (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Successfully updated");
-    });
-})
-
 
 
 
