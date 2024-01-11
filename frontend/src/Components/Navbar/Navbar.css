@@ -79,6 +79,12 @@
 .nav-dropdown{
     display: none;
 }
+.nav-dropdown img{
+    width: 30px;
+    height: 30px;
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
 
 @media(max-width: 1280px){
     .navbar{
@@ -154,6 +160,9 @@
     }
     .nav-menu-visible{
         display: flex;
+    }
+    .nav-dropdown img.open{
+        transform: rotate(180deg);
     }
 }
 @media(max-width: 500px){
