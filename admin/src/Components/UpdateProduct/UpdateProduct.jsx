@@ -9,7 +9,7 @@ const UpdateProduct = ({ productId }) => {
         image: "",
         category: "women",
         new_price: "",
-        old_price: ""
+
     });
 
     useEffect(() => {

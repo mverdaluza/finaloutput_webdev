@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './ListProduct.css'
 import remove_icon from '../../assets/cross_icon.png'
+import UpdateProduct from "../UpdateProduct/UpdateProduct";
+
 const ListProduct = () =>{
     const [allproducts, setAllProducts] = useState([]);
     const fetchInfo = async()=>{
@@ -32,9 +34,9 @@ const ListProduct = () =>{
             <div className="listproduct-format-main">
                 <p>Products</p>
                 <p>Title</p>
-                <p>Old Price</p>
-                <p>New Price</p>
+                <p>Price</p>
                 <p>Category</p>
+                <p>Update</p>
                 <p>Remove</p>
             </div>
             <div className="listproduct-allproducts">
@@ -43,9 +45,9 @@ const ListProduct = () =>{
                 <div key={product.id} className="listproduct-format-main listprod">
                     <img src={product.image} alt="" className="listprod-icon" />
                     <p>{product.name}</p>
-                    <p>&#x20B1;{product.old_price}</p>
                     <p>&#x20B1;{product.new_price}</p>
                     <p>{product.category}</p>
+                    <button onClick={() => updateButton(product.id)} className="listprod-updatebutton">Update</button>
                     <img onClick={() => removeProd(product.id)} src={remove_icon} alt="" className="listprod-removeicon" />
                 </div>
                 ))}
