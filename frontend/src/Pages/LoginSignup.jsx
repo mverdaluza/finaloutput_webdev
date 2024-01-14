@@ -5,7 +5,7 @@ const LoginSignup = () =>{
     return (
         <div className="loginsignup">
             <div className="loginsignup-container">
-                <h1>Sign Up</h1>
+                <h1>Create an Account</h1>
                 <div className="loginsignup-fields">
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email Address" />
