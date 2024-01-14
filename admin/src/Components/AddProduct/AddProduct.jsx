@@ -72,7 +72,7 @@ const AddProduct = () =>{
                 <select value={productDetails.category} onChange={changeHandler} name="category" className="addproduct-selector">
                     <option value="tops">Tops</option>
                     <option value="buttom">Buttom</option>
-                    <option value="beauty">Beauty</option>
+                    <option value="dress">Dress</option>
                 </select>
             </div>
             <div className="addproduct-item">

@@ -1,39 +1,60 @@
 import p1_img from "./black_top.jpg";
 import p2_img from "./polo.jpg";
-import p3_img from "./browndress.png";
+import p3_img from "./prod3.jpg";
 import p4_img from "./snoopy.png";
 import p5_img from "./glittery_blouse.jpg";
-import p6_img from "./dope.jpg";
-import p7_img from "./product_7.png";
+import p6_img from "./longsleeve_brown.jpg";
+import p7_img from "./sleeveless_black.jpg";
 import p8_img from "./sleeveless_squareneck.jpg";
 import p9_img from "./haltertop.jpg";
 import p10_img from "./bluesatin.jpg";
-import p11_img from "./trouser.jpg";
-import p12_img from "./glittery_blouse.jpg";
+import p11_img from "./product_8.png";
+import p12_img from "./white_tanktop.jpg";
 import p13_img from "./sunshine_shirt.jpg";
-import p14_img from "./sleeveless_black.jpg";
-import p15_img from "./haltertop.jpg";
-import p16_img from "./product_16.png";
+import p14_img from "./fushia_top.jpg";
+import p15_img from "./croptop_black.jpg";
+import p16_img from "./squareneck_white.jpg";
 import p17_img from "./trouser.jpg";
-import p18_img from "./product_18.png";
-import p19_img from "./product_19.png";
-import p20_img from "./product_20.png";
-import p21_img from "./product_21.png";
-import p22_img from "./product_22.png";
-import p23_img from "./product_23.png";
-import p24_img from "./product_24.png";
-import p25_img from "./product_25.png";
-import p26_img from "./product_26.png";
-import p27_img from "./product_27.png";
+import p18_img from "./lightblue_jeans.jpg";
+import p19_img from "./black_cargopants.jpg";
+import p20_img from "./prod20.jpg";
+import p21_img from "./prod21.jpg";
+import p22_img from "./prod22.jpg";
+import p23_img from "./prod23.jpg";
+import p24_img from "./prod24.jpg";
+import p25_img from "./prod25.jpg";
+import p26_img from "./prod26.jpg";
+import p27_img from "./prod27.jpg";
 import p28_img from "./leggings.jpg";
-import p29_img from "./product_29.png";
-import p30_img from "./product_30.png";
-import p31_img from "./lipstick2.jpg";
-import p32_img from "./lipstick1.jpg";
-import p33_img from "./primer.jpg";
-import p34_img from "./palette.jpg";
-import p35_img from "./concealer.jpg";
-import p36_img from "./makeup_sponge.jpg";
+import p29_img from "./prod29.jpg";
+import p30_img from "./boyfriendjeans_black.jpg";
+import p31_img from "./prod30.jpg";
+import p32_img from "./prod32.jpg";
+import p33_img from "./browndress.png";
+import p34_img from "./prod34.jpg";
+import p35_img from "./prod35.jpg";
+import p36_img from "./prod36.jpg";
+import p37_img from "./prod37.jpg";
+import p38_img from "./prod38.jpg";
+import p39_img from "./prod39.jpg";
+import p40_img from "./prod40.jpg";
+import p41_img from "./prod41.jpg";
+import p42_img from "./prod42.jpg";
+import p43_img from "./prod43.jpg";
+import p44_img from "./prod44.jpg";
+import p45_img from "./prod45.jpg";
+import p46_img from "./prod46.jpg";
+import p47_img from "./prod47.jpg";
+import p48_img from "./prod48.jpg";
+
+
+
+
+
+
+
+
+
 
 let all_product = [
   {
@@ -41,83 +62,83 @@ let all_product = [
     name: "Women's Graphic Printed 100% Cotton T-Shirt - Boyfriend Fit, Round Neck, Half Sleeve",
     category: "tops",
     image: p1_img,
-    new_price: 50.0,
+    new_price: 399,
   },
   {
     id: 2,
     name: "Women Polo Shirt",
     category: "tops",
     image: p2_img,
-    new_price: 85.0,
+    new_price: 799,
   },
   {
     id: 3,
-    name: "Women's Synthetic Bodycon Midi Dress",
+    name: "Women's Solid Multicolor High Neck Full Sleeve Top",
     category: "tops",
     image: p3_img,
-    new_price: 60.0,
+    new_price: 399,
   },
   {
     id: 4,
     name: "Women's Snoopy Graphic Printed 100% Cotton T-Shirt - Boyfriend Fit, Round Neck, Half Sleeves",
     category: "tops",
     image: p4_img,
-    new_price: 100.0,
+    new_price: 299,
   },
   {
     id: 5,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     category: "tops",
     image: p5_img,
-    new_price: 85.0,
+    new_price: 599,
   },
   {
     id: 6,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Long Sleeve Top",
     category: "tops",
     image: p6_img,
-    new_price: 85.0,
+    new_price: 299,
   },
   {
     id: 7,
-    name: "White Longsleeve Turtle Neck",
+    name: "Women's Sleeveless Black ",
     category: "tops",
     image: p7_img,
-    new_price: 85.0,
+    new_price: 299.0,
   },
   {
     id: 8,
     name: "Womens Square Neck Sleeveless Crop Top",
     category: "tops",
     image: p8_img,
-    new_price: 85.0,
+    new_price: 399,
   },
   {
     id: 9,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Black Halter Top",
     category: "tops",
     image: p9_img,
-    new_price: 85.0,
+    new_price: 499,
   },
   {
     id: 10,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Blue Top",
     category: "tops",
     image: p10_img,
-    new_price: 85.0,
+    new_price: 999,
 
   },
   {
     id: 11,
-    name: "Trouser",
-    category: "buttom",
+    name: "Black Top",
+    category: "tops",
     image: p11_img,
     new_price: 85.0,
   },
   {
     id: 12,
-    name: "Glittery Women Blouse",
-    category: "women",
+    name: " Solid Ribbed Crop Tank Top",
+    category: "tops",
     image: p12_img,
     new_price: 85.0,
   },
@@ -130,99 +151,99 @@ let all_product = [
   },
   {
     id: 14,
-    name: "Eye Lash Curler",
-    category: "men",
+    name: "Asymmetric Neck Puff/Balloon Bishop Sleeve",
+    category: "tops",
     image: p14_img,
     new_price: 85.0,
   },
   {
     id: 15,
-    name: "Womens Square Neck Sleeveless Crop Top",
-    category: "men",
+    name: " Solid Full Sleeve Crop Top",
+    category: "tops",
     image: p15_img,
     new_price: 85.0,
   },
   {
     id: 16,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: " Puff Sleeves Square Neck",
+    category: "tops",
     image: p16_img,
     new_price: 85.0,
   },
   {
     id: 17,
     name: "Womens Satin Sleeveless Solid Top",
-    category: "women",
+    category: "buttom",
     image: p17_img,
     new_price: 85.0,
   },
   {
     id: 18,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "Women High Rise Cotton Lycra Ankle Length Slim fit Light Blue Solid Jeans",
+    category: "buttom",
     image: p18_img,
     new_price: 85.0,
   },
   {
     id: 19,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "Womens Solid High Waist Cargo Jeans",
+    category: "buttom",
     image: p19_img,
     new_price: 85.0,
   },
   {
     id: 20,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "Puma Women's Bermuda Shorts",
+    category: "buttom",
     image: p20_img,
     new_price: 85.0,
   },
   {
     id: 21,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "Women's Knotted Casual Short",
+    category: "buttom",
     image: p21_img,
     new_price: 85.0,
   },
   {
     id: 22,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "Women's & Girls' Solid Slant Pocket Wide Leg Shorts",
+    category: "buttom",
     image: p22_img,
     new_price: 85.0,
   },
   {
     id: 23,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "Faux Leather Above Knee Length Skirt",
+    category: "buttom",
     image: p23_img,
     new_price: 85.0,
   },
   {
     id: 24,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    category: "men",
+    name: "High Waist Flared Skater Short Mini Skirt",
+    category: "buttom",
     image: p24_img,
     new_price: 85.0,
   },
   {
     id: 25,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Trendy Skater Skirt with Attached Inner Shorts and Flared Inskirt",
+    category: "buttom",
     image: p25_img,
     new_price: 85.0,
   },
   {
     id: 26,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Women's Elastic Waist Pencil Bodycon Midi Skirt",
+    category: "buttom",
     image: p26_img,
     new_price: 85.0,
   },
   {
     id: 27,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Women High Rise Full Length Jeans",
+    category: "buttom",
     image: p27_img,
     new_price: 85.0,
   },
@@ -235,60 +256,150 @@ let all_product = [
   },
   {
     id: 29,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Women Denim Shorts",
+    category: "buttom",
     image: p29_img,
     new_price: 85.0,
   },
   {
     id: 30,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Women's Denim Straight Fit Boyfriend Jeans",
+    category: "buttom",
     image: p30_img,
     new_price: 85.0,
   },
   {
     id: 31,
-    name: "Intense Volume Matte Lipstick",
-    category: "beauty",
+    name: "Solid Women Regular Shorts",
+    category: "buttom",
     image: p31_img,
     new_price: 85.0,
   },
   {
     id: 32,
-    name: "Matte Lipstick, Pink Geranium, 4.5g",
-    category: "beauty",
+    name: "Women's Light Blue Regular High Rise Clean Look Above Knee Stretchable Denim Shorts",
+    category: "buttom",
     image: p32_img,
     new_price: 85.0,
   },
   {
     id: 33,
-    name: "Maybelline New York Fit Me Dewy + Smooth Primer",
-    category: "beauty",
+    name: "Women's Synthetic Bodycon Midi Dress",
+    category: "dress",
     image: p33_img,
     new_price: 85.0,
   },
   {
     id: 34,
-    name: "Eyeshadow Palette",
-    category: "beauty",
+    name: "Women's Casual Solid Flared Sleeve A-line Dress",
+    category: "dress",
     image: p34_img,
     new_price: 85.0,
   },
   {
     id: 35,
-    name: "Maybelline New York Radiant Pencil Concealer, Dark Circles and Blemish Eraser",
-    category: "beauty",
+    name: "Women Midi Dress",
+    category: "dress",
     image: p35_img,
     new_price: 85.0,
   },
   {
     id: 36,
-    name: "Makeup Sponge Set Beauty Blender with Egg Case",
-    category: "beauty",
+    name: "Sleeveless One Shoulder Bodycon Casual Maxi Dress",
+    category: "dress",
     image: p36_img,
     new_price: 85.0,
   },
+  {
+    id: 37,
+    name: "Women's Ruched Drawstring Off- Shoulder Bodycon Mini Dress",
+    category: "dress",
+    image: p37_img,
+    new_price: 85.0,
+  },
+  {
+    id: 38,
+    name: "Women’s Bodycon Knee Length Dress",
+    category: "dress",
+    image: p38_img,
+    new_price: 85.0,
+  },
+  {
+    id: 39,
+    name: "Womens Solid Fit & Flare Dress",
+    category: "dress",
+    image: p39_img,
+    new_price: 85.0,
+  },
+  {
+    id: 40,
+    name: "Women's Midi Bodycon Dress",
+    category: "dress",
+    image: p40_img,
+    new_price: 85.0,
+  },
+  {
+    id: 41,
+    name: "Women's A-line Midi Dress",
+    category: "dress",
+    image: p41_img,
+    new_price: 85.0,
+  },
+  {
+    id: 42,
+    name: "Womens Midi Western Blue Dress",
+    category: "dress",
+    image: p42_img,
+    new_price: 85.0,
+  },
+  {
+    id: 43,
+    name: "Stretchable Lycra Solid Mini Dress for Women",
+    category: "dress",
+    image: p43_img,
+    new_price: 85.0,
+  },
+  {
+    id: 44,
+    name: "Women's Polyester Fit and Flare Midi Casual Dress",
+    category: "dress",
+    image: p44_img,
+    new_price: 85.0,
+  },
+  {
+    id: 45,
+    name: "Round Neck Sleeveless Striped Midi Bodycon Dress with Zipper",
+    category: "dress",
+    image: p46_img,
+    new_price: 85.0,
+  },
+
+  {
+    id: 46,
+    name: "Women’s Bodycon Knee Length Dress",
+    category: "dress",
+    image: p45_img,
+    new_price: 85.0,
+  },
+
+  {
+    id: 47,
+    name: "Women's Polyester Blend Bodycon Midi Casual Dress",
+    category: "dress",
+    image: p47_img,
+    new_price: 85.0,
+  },
+
+  {
+    id: 48,
+    name: "Women's Cold Sleeve Skater Dress",
+    category: "dress",
+    image: p48_img,
+    new_price: 85.0,
+  },
+
+
+
 ];
 
 export default all_product;
