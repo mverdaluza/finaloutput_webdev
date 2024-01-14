@@ -98,7 +98,7 @@ app.post('/addproduct', async(req, res)=>{
     })
 })
 
-app.post('/remove', async(req,res)=>{
+app.post('/removeproduct', async(req,res)=>{
     await Product.findOneAndDelete({id:req.body.id});
     console.log("Product is Removed");
     res.json({
