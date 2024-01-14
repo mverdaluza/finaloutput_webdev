@@ -24,10 +24,6 @@
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
-.collections img{
-    width: 300px;
-    height: 320px;
-}
 
 
 @media(max-width:1280px){
@@ -42,10 +38,6 @@
     .collections{
         gap: 20px;
         margin-top: 30px;
-    }
-    .collections img{
-        width: 250px;
-        height: 250px;
     }
 }
 
@@ -64,10 +56,6 @@
         gap: 15px;
         margin-top: 20px;
     }
-    .collections img{
-        width: 200px;
-        height: 200px;
-    }
 }
 @media(max-width:800px){
     .new-collections{
@@ -84,10 +72,6 @@
         margin-bottom: 20px;
         padding-bottom: 10px;
     }
-    .collections img{
-        width: 150px;
-        height: 150px;
-    }
 }
 
 @media(max-width:500px){
@@ -101,9 +85,5 @@
         padding-bottom: 20px;
         margin-bottom: 20px;
         padding-bottom: 10px;
-    }
-    .collections img{
-        width: 100%;
-        height: auto; 
     }
 }

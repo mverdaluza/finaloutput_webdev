@@ -21,10 +21,7 @@
     display: flex;
     gap: 30px;
 }
-.popular-item img{
-    width: 300px;
-    height: 320px;
-}
+
 
 @media(max-width:1280px){
     .popular{
@@ -58,10 +55,7 @@
         gap: 15px;
         margin-top: 20px;
     }
-    .popular-item img{
-        width: 300px;
-        height: 200px;
-    }
+  
     
 }
 @media(max-width:800px){
@@ -80,10 +74,7 @@
         margin-bottom: 20px;
         padding-bottom: 10px;
     }
-    .popular-item img{
-        width: 350px;
-        height: 150px;
-    }
+ 
     
 }
 
@@ -96,9 +87,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
-    .popular-item img{
-        width: 300px;
-        height: 200px;
-    }
+
     
 }

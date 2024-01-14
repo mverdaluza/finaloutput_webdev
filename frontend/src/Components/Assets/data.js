@@ -1,5 +1,5 @@
 import p1_img from './black_top.jpg'
-import p2_img from './polo.png'
+import p2_img from './polo.jpg'
 import p3_img from './browndress.png'
 import p4_img from './snoopy.png'
 

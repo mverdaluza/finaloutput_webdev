@@ -3,7 +3,7 @@ import p6_img from "./concealer.jpg";
 import p7_img from "./sleeveless_black.jpg";
 import p8_img from "./sleeveless_squareneck.jpg";
 import p9_img from "./haltertop.jpg";
-import p10_img from "./bluesatin.jpg";
+import p10_img from "./polo.jpg";
 import p11_img from "./trouser.jpg";
 import p12_img from "./leggings.jpg";
 
