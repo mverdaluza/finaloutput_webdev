@@ -5,6 +5,8 @@
     margin: auto;
     padding: 0 140px;
     margin-bottom: 150px;
+    margin-top: 50px;
+    padding-bottom: 20px;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
 }
 .offers-left{

@@ -56,7 +56,7 @@ app.get("/allproducts", (req,res)=>{
 })
 
 app.post("/addproduct", (req,res)=>{
-    const q = "INSERT INTO fashion (`id`, `name`, `image`, `category`, `new_price`, `old_price`) VALUES(?)";
+    const q = "INSERT INTO fashion (`id`, `name`, `image`, `category`, `new_price`) VALUES(?)";
     const values = [
         req.body.id,
         req.body.name,

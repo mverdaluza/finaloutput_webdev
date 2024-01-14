@@ -63,12 +63,9 @@ const AddProduct = () =>{
             </div>
 
             <div className="addproduct-price">
+               
                 <div className="addproduct-item">
                     <p>Price</p>
-                    <input value={productDetails.old_price} onChange={changeHandler} type="text" name="old_price" placeholder="Old Price" />
-                </div>
-                <div className="addproduct-item">
-                    <p>New Price</p>
                     <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder="New Price" />
                 </div>
             </div>
@@ -76,9 +73,9 @@ const AddProduct = () =>{
             <div className="addproduct-item">
                 <p>Product Category</p>
                 <select value={productDetails.category} onChange={changeHandler} name="category" className="addproduct-selector">
-                    <option value="women">Women</option>
-                    <option value="men">Men</option>
-                    <option value="kid">Kids</option>
+                    <option value="tops">Tops</option>
+                    <option value="buttom">Buttom</option>
+                    <option value="beauty">Beauty</option>
                 </select>
             </div>
             <div className="addproduct-item">

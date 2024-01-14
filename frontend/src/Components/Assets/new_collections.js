@@ -1,68 +1,60 @@
-import p1_img from "./product_12.png";
-import p2_img from "./product_35.png";
-import p3_img from "./product_14.png";
-import p4_img from "./product_8.png";
-import p5_img from "./product_15.png";
-import p6_img from "./product_2.png";
-import p7_img from "./product_17.png";
-import p8_img from "./product_28.png";
+import p5_img from "./glittery_blouse.jpg";
+import p6_img from "./concealer.jpg";
+import p7_img from "./sleeveless_black.jpg";
+import p8_img from "./sleeveless_squareneck.jpg";
+import p9_img from "./haltertop.jpg";
+import p10_img from "./bluesatin.jpg";
+import p11_img from "./trouser.jpg";
+import p12_img from "./leggings.jpg";
 
 let new_collections = [
   {
     id: 12,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p1_img,
+    name: "Glittery Women Blouse",
+    image: p5_img,
     new_price: 50.0,
-    old_price: 80.5,
   },
   {
     id: 35,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    image: p2_img,
+    name: "Women's Typography 100% Cotton T-Shirt - Boyfriend Fit, Round Neck, Half Sleeves",
+    image: p6_img,
     new_price: 85.0,
-    old_price: 120.5,
   },
   {
     id: 14,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    image: p3_img,
+    name: "Women's Readymade Art Silk Sleeveless Saree Blouse",
+    image: p7_img,
     new_price: 60.0,
-    old_price: 100.5,
   },
   {
     id: 8,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p4_img,
+    name: " Womens Square Neck Sleeveless Crop Top",
+    image: p8_img,
     new_price: 100.0,
-    old_price: 150.0,
   },
   {
     id: 15,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    image: p5_img,
+    name: "Women's Solid Form Fitting Halter Top | Crop top",
+    image: p9_img,
     new_price: 50.0,
-    old_price: 80.5,
   },
   {
     id: 2,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p6_img,
+    name: "Womens Satin Sleeveless Solid Top",
+    image: p10_img,
     new_price: 85.0,
-    old_price: 120.5,
   },
   {
     id: 17,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    image: p7_img,
+    name: "Women's Slim Fit Casual Trousers",
+    image: p11_img,
     new_price: 60.0,
-    old_price: 100.5,
   },
   {
     id: 28,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    image: p8_img,
+    name: "Women's Super Combed Cotton Elastane Stretch Leggings with Ultrasoft Waistband",
+    image: p12_img,
     new_price: 100.0,
-    old_price: 150.0,
   },
 ];
 

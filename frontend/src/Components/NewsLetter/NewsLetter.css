@@ -51,7 +51,7 @@
 
 @media(max-width: 1280px){
     .newsletter{
-        padding: 0px 80px;
+        padding: 10px 80px;
         margin-bottom: 120px;
         gap: 20px;
     }
@@ -76,6 +76,7 @@
 
 @media(max-width: 1024px){
     .newsletter{
+        padding: 0 80px;
         margin-bottom: 60px;
     }
     .newsletter h1{

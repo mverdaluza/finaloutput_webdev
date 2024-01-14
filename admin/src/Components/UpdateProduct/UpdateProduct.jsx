@@ -16,7 +16,9 @@ const UpdateProduct = ({ productId }) => {
         // Fetch product details based on the productId when the component mounts
         fetch(`http://localhost:8800/allproducts`)
             .then(response => response.json())
-            .then(data => {
+            .then(data => {     
+                console.log("Fetched data:", data);  // Log the data received from the server
+
                 const productToUpdate = data.find(product => product.id === productId);
                 if (productToUpdate) {
                     setProductDetails(productToUpdate);
