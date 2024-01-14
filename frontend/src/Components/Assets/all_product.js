@@ -28,39 +28,39 @@ import p27_img from "./product_27.png";
 import p28_img from "./leggings.jpg";
 import p29_img from "./product_29.png";
 import p30_img from "./product_30.png";
-import p31_img from "./product_31.png";
-import p32_img from "./product_32.png";
-import p33_img from "./product_33.png";
-import p34_img from "./product_34.png";
+import p31_img from "./lipstick2.jpg";
+import p32_img from "./lipstick1.jpg";
+import p33_img from "./primer.jpg";
+import p34_img from "./palette.jpg";
 import p35_img from "./concealer.jpg";
-import p36_img from "./product_36.png";
+import p36_img from "./makeup_sponge.jpg";
 
 let all_product = [
   {
     id: 1,
     name: "Bewakoof Women's Graphic Printed 100% Cotton T-Shirt - Boyfriend Fit, Round Neck, Half Sleeve",
-    category: "women",
+    category: "tops",
     image: p1_img,
     new_price: 50.0,
   },
   {
     id: 2,
     name: "Women Polo Shirt",
-    category: "women",
+    category: "tops",
     image: p2_img,
     new_price: 85.0,
   },
   {
     id: 3,
     name: "Women's Synthetic Bodycon Midi Dress",
-    category: "women",
+    category: "tops",
     image: p3_img,
     new_price: 60.0,
   },
   {
     id: 4,
     name: "Women's Snoopy Graphic Printed 100% Cotton T-Shirt - Boyfriend Fit, Round Neck, Half Sleeves",
-    category: "women",
+    category: "tops",
     image: p4_img,
     new_price: 100.0,
     old_price: 150.0,
@@ -68,7 +68,7 @@ let all_product = [
   {
     id: 5,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
+    category: "tops",
     image: p5_img,
     new_price: 85.0,
     old_price: 120.5,
@@ -76,15 +76,15 @@ let all_product = [
   {
     id: 6,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
+    category: "tops",
     image: p6_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 7,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
+    name: "White Longsleeve Turtle Neck",
+    category: "tops",
     image: p7_img,
     new_price: 85.0,
     old_price: 120.5,
@@ -92,23 +92,21 @@ let all_product = [
   {
     id: 8,
     name: "Womens Square Neck Sleeveless Crop Top",
-    category: "women",
+    category: "tops",
     image: p8_img,
     new_price: 85.0,
-    old_price: 120.5,
   },
   {
     id: 9,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
+    category: "tops",
     image: p9_img,
     new_price: 85.0,
-    old_price: 120.5,
   },
   {
     id: 10,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "women",
+    category: "buttom",
     image: p10_img,
     new_price: 85.0,
 
@@ -274,51 +272,49 @@ let all_product = [
   },
   {
     id: 31,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Intense Volume Matte Lipstick",
+    category: "beauty",
     image: p31_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 32,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Matte Lipstick, Pink Geranium, 4.5g",
+    category: "beauty",
     image: p32_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 33,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Maybelline New York Fit Me Dewy + Smooth Primer",
+    category: "beauty",
     image: p33_img,
     new_price: 85.0,
-    old_price: 120.5,
   },
   {
     id: 34,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Eyeshadow Palette",
+    category: "beauty",
     image: p34_img,
     new_price: 85.0,
-    old_price: 120.5,
   },
   {
     id: 35,
     name: "Maybelline New York Radiant Pencil Concealer, Dark Circles and Blemish Eraser",
-    category: "kid",
+    category: "beauty",
     image: p35_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 36,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "kid",
+    name: "Makeup Sponge Set Beauty Blender with Egg Case",
+    category: "beauty",
     image: p36_img,
     new_price: 85.0,
-    old_price: 120.5,
+
   },
 ];
 
