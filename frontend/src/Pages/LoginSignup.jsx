@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import './CSS/LoginSignup.css'
 
 const LoginSignup = () =>{
+
+    const [state, serState] = useState("Login");
+
     return (
         <div className="loginsignup">
             <div className="loginsignup-container">
-                <h1>Create an Account</h1>
+                <h1>{state}</h1>
                 <div className="loginsignup-fields">
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email Address" />

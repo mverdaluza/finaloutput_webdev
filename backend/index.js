@@ -1,103 +1,127 @@
-import express from "express";
-import multer from "multer";
-import mysql from "mysql";
-import path from 'path';
-import cors from 'cors';
+const port = 4000;
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const multer = require("multer");
+const path = require("path");
+const cors = require("cors");
+const { log } = require("console");
 
-const app = express() // call express function
+app.use(express.json());
 app.use(cors());
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "ecommerce"
-})
+// Database connection with mongo db
+mongoose.connect("mongodb+srv://maverdaluza:maverdaluzaMongo2024@cluster0.j2x6iej.mongodb.net/stylesphere");
 
-app.use(express.json()) // execute statement to insert
-
+// API 
 app.get("/", (req, res)=>{
-    res.json("This is the backend")
+    res.send("Express App is running");
 })
-
-
-
-
-// image storage
 
 const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename: (req, file, cb)=>{
+    destination: './upload/images', 
+    filename: (req, file,cb)=>{
         return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
     }
 })
 
 const upload = multer({storage:storage})
 
-// Creating upload, images endpoint
-app.use('/images', express.static('upload/images'));
+// Creating upload endpoint for images
+app.use("/images", express.static('upload/images'))
 
-app.post("/upload", upload.single('product'),(req, res)=>{
+app.post("/upload",upload.single('product'),(req, res)=>{
     res.json({
         success: 1,
-        image_url: `http://localhost:8800/images/${req.file.filename}`
+        image_url: `http://localhost:${port}/images/${req.file.filename}`
     })
 })
 
-
-
-// API for allproducts, add, delete
-app.get("/allproducts", (req,res)=>{
-    const q = "SELECT * FROM fashion"
-    db.query(q,(err, data)=>{
-        if(err) return res.json(err)
-        return res.json(data)
-    })
+// schema for creating product
+const Product = mongoose.model("Fashion",{
+    id: {
+        type: Number,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: true,
+    },
+    category:{
+        type: String,
+        required: true,
+    },
+    new_price:{
+        type: Number,
+        required: true,
+    },
+    date:{
+        type: Date,
+        default: Date.now,
+    },
+    available:{
+        type: Boolean,
+        default: true,
+    },
 })
 
-app.post("/addproduct", (req,res)=>{
-    const q = "INSERT INTO fashion (`id`, `name`, `image`, `category`, `new_price`) VALUES(?)";
-    const values = [
-        req.body.id,
-        req.body.name,
-        req.body.image,
-        req.body.category,
-        req.body.new_price,
-    ];
-    db.query(q, [values], (err, data)=>{
-        if(err) return res.json(err)
-        return res.json("Successfully inserted")
-    })
-})
-
-app.delete("/deleteproduct/:id", (req,res)=>{
-    const fashionId = req.params.id;
-    const q = "DELETE FROM fashion WHERE id = ?";
-    db.query(q, [fashionId], (err,data)=>{
-        if(err) return res.json(err);
-        return res.json("Successfully deleted");
+// API for adding, deleting, all products, 
+app.post('/add', async(req, res)=>{
+    let products = await Product.find({});
+    let id;
+    if(products.length>0){
+        let last_product_arr = products.slice(-1);
+        let last_product = last_product_arr[0];
+        id = last_product.id+1;
+    }
+    else{
+        id = 1;
+    }
+    const product = new Product({
+        id: id,
+        name: req.body.name,
+        image: req.body.image,
+        category: req.body.category,
+        new_price: req.body.new_price,
     });
-});
+    console.log(product);
+    await product.save();
+    console.log("Product Saved");
+    res.json({
+        success: true,
+        name: req.body.name,
+    })
+})
 
-app.put("/updateproduct/:id", (req, res) => {
-    const fashionId = req.params.id;
-    const q = "UPDATE fashion SET name=?, image=?, category=?, new_price=? WHERE id=?";
-    const values = [
-        req.body.name,
-        req.body.image,
-        req.body.category,
-        req.body.new_price,
-        fashionId,
-    ];
+app.post('/remove', async(req,res)=>{
+    await Product.findOneAndDelete({id:req.body.id});
+    console.log("Product is Removed");
+    res.json({
+        success: true,
+        name: req.body.name
+    })
+})
 
-    db.query(q, values, (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Successfully updated");
-    });
-});
+app.get('/allproducts', async(req, res)=>{
+    let products = await Product.find({});
+    console.log("Products Fetched");
+    res.send(products);
+})
 
 
 
-app.listen(8800, ()=>{
-    console.log("Connected to backend")
-}) // establish network protocol
+
+
+app.listen(port, ((error)=>{
+    if (!error){
+        console.log("Server running on port "+port);
+    }
+    else{
+        console.log("Error: "+error)
+    }
+}))
