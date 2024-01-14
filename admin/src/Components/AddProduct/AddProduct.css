@@ -36,7 +36,7 @@
     color: #7b7b7b;
     border: 1px solid #7b7b7b8d;
 }
-.allproduct-image{
+.addproduct-image{
     height: 120px;
     width: 120px;
     border-radius: 10px;
@@ -48,7 +48,7 @@
     width: 160px;
     height: 50px;
     border-radius: 6px;
-    background: #6079ff;
+    background: #450d42;
     border: none;
     cursor: pointer;
     color: white;

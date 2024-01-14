@@ -71,7 +71,7 @@ const Product = mongoose.model("Fashion",{
 })
 
 // API for adding, deleting, all products, 
-app.post('/add', async(req, res)=>{
+app.post('/addproduct', async(req, res)=>{
     let products = await Product.find({});
     let id;
     if(products.length>0){
