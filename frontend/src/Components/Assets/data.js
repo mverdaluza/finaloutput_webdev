@@ -1,6 +1,6 @@
 import p1_img from './black_top.jpg'
 import p2_img from './polo.jpg'
-import p3_img from './browndress.png'
+import p3_img from './prod3.jpg'
 import p4_img from './snoopy.png'
 
 let data_product = [

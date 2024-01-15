@@ -145,13 +145,13 @@
       top: 50px; 
       left: 0;
       width: 100%;
-      color: rgb(140, 113, 113);
+      color: rgb(255, 255, 255);
       background: #201e1e;
       padding: 20px; /* Adjust as needed */
       margin-top: 10px; /* Adjust as needed */
-      z-index: 1000; /* Ensure the dropdown is on top of other content */
-      flex-direction: row; /* Display items horizontally */
-      text-align: center; /* Center text */
+
+      flex-direction: column;
+      text-align: center; 
     }
     .nav-menu-visible {
       display: flex;

@@ -28,7 +28,7 @@ const ProductDisplay = (props) =>{
                     <img src={star_icon} alt="" />
                     <img src={star_icon} alt="" />
                     <img src={star_dull_icon} alt="" />
-                    <p>(122)</p>
+                    <p>(99)</p>
                 </div>
                 <div className="productDisplay-right-price">
                     <div className="productDisplay-right-newprice">&#x20B1;{product.new_price}</div>
@@ -47,8 +47,6 @@ const ProductDisplay = (props) =>{
                 </div>
                 <button onClick={()=>{addtoCart(product.id)}}>Add to Cart</button>
                 <p className="productDisplay-right-catgory"><span>Category: </span>Women, T-shirt, Croptop</p>
-                <p className="productDisplay-right-catgory"><span>Tags: </span>Modern, Latest</p>
-
             </div>
         </div>
     )

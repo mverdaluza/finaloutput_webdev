@@ -1,7 +1,7 @@
 import React, { useContext, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo2 from "../Assets/logo2.png";
+import logo2 from "../Assets/stylespherelogo.png";
 import cart from "../Assets/trolley.png";
 import { ShopContext } from "../../Context/ShopContext";
 import dropdown from "../Assets/menu.png";

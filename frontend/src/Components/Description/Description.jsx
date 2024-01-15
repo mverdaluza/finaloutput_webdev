@@ -6,7 +6,7 @@ const Description = () =>{
         <div className="desc-box">
             <div className="desc-navigator">
                 <div className="desc-nav-box">Description</div>
-                <div className="desc-nav-box-fade">Reviews (122)</div>
+                <div className="desc-nav-box-fade">Reviews (99)</div>
             </div>
             <div className="desc-desc">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit tempore dolores culpa optio

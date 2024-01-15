@@ -1,6 +1,6 @@
 import React from "react";
 import './Footer.css'
-import footer_logo from '../Assets/logobig.png'
+import footer_logo from '../Assets/stylespherefooter.png'
 import facebook_icon from '../Assets/facebook.png'
 import instagram_icon from '../Assets/instagram.png'
 import pinterest_icon from '../Assets/pinterest.png'
@@ -10,8 +10,8 @@ const Footer = () =>{
     return(
         <div className="footer">
             <div className="footer-logo">
-                <img src={footer_logo} alt="" />
-                <Link to="/"  style={{ textDecoration: "none" }} ><p>STYLESPHERE</p></Link>
+                <Link to="/"><img src={footer_logo} alt="" /></Link>
+                <Link to="/"  style={{ textDecoration: "none" }} ><p>StyleSphere</p></Link>
             </div>
           
             <div className="footer-social-icon">
