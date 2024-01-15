@@ -1,24 +1,25 @@
-const port = 4000;
-const express = require("express");
+const port = 4000; // port number 
+const express = require("express"); 
 const app = express();
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const multer = require("multer");
-const path = require("path");
-const cors = require("cors");
-const { log } = require("console");
+const mongoose = require("mongoose"); // database
+const jwt = require("jsonwebtoken"); 
+const multer = require("multer"); // image storage system and it will be stored in upload folder 
+const path = require("path"); 
+const cors = require("cors"); // access to react project and to connect to backend
 
-app.use(express.json());
-app.use(cors());
+
+app.use(express.json()); 
+app.use(cors()); 
 
 // Database connection with mongo db
 mongoose.connect("mongodb+srv://maverdaluza:maverdaluzaMongo2024@cluster0.j2x6iej.mongodb.net/stylesphere");
 
-// API 
+// API to check express app
 app.get("/", (req, res)=>{
     res.send("Express App is running");
 })
 
+// image storage system
 const storage = multer.diskStorage({
     destination: './upload/images', 
     filename: (req, file,cb)=>{
@@ -38,7 +39,7 @@ app.post("/upload",upload.single('product'),(req, res)=>{
     })
 })
 
-// schema for creating product
+// schema for creating Product using mongoose db
 const Product = mongoose.model("Fashion",{
     id: {
         type: Number,
@@ -70,7 +71,7 @@ const Product = mongoose.model("Fashion",{
     },
 })
 
-// API for adding, deleting, all products, 
+// API for adding product 
 app.post('/addproduct', async(req, res)=>{
     let products = await Product.find({});
     let id;
@@ -98,6 +99,7 @@ app.post('/addproduct', async(req, res)=>{
     })
 })
 
+// api for remove product with id
 app.post('/removeproduct', async(req,res)=>{
     await Product.findOneAndDelete({id:req.body.id});
     console.log("Product is Removed");
@@ -107,6 +109,7 @@ app.post('/removeproduct', async(req,res)=>{
     })
 })
 
+// api to fetch all products from database
 app.get('/allproducts', async(req, res)=>{
     let products = await Product.find({});
     console.log("Products Fetched");
@@ -134,7 +137,7 @@ const Users = mongoose.model('Users',{
     }
 })
 
-// endpoint for registering user
+// endpoint for signup 
 app.post('/signup', async (req, res) => {
 
     let check = await Users.findOne({email: req.body.email});
@@ -166,7 +169,7 @@ app.post('/signup', async (req, res) => {
     res.json({ success: true, token });
 });
 
-// endpoint for user login
+// endpoint for user login, verifying the user id and password from database
 app.post('/login', async(req,res)=>{
     let user = await Users.findOne({email:req.body.email});
     if(user){
@@ -177,8 +180,8 @@ app.post('/login', async(req,res)=>{
                     id:user.id
                 }
             }
-            const token = jwt.sign(data, 'secret_ecom');
-            res.json({success:true, token})
+            const token = jwt.sign(data, 'secret_ecom');  
+            res.json({success:true, token})  // generate token if success
         }
         else{
             res.json({success:false, errors: "Incorrect password"});
@@ -187,6 +190,66 @@ app.post('/login', async(req,res)=>{
     else{
         res.json({success:false,errors:"Incorrect email address"});
     }
+})
+
+// endpoint for new collection
+app.get('/newcollections', async(req, res)=>{
+    let products = await Product.find({});
+    let newcollection = products.slice(1).slice(-8);  // added new collection
+    console.log("New Collection Fetch");
+    res.send(newcollection); // 
+})
+
+//endpoint for popular in clothing
+app.get('/popularintops',async(req, res)=>{
+    let products = await Product.find({category:"tops"});
+    let popularinTops = products.slice(0,4);
+    console.log('Popular in Tops Fetched');
+    res.send(popularinTops);
+})
+
+// middleware to fetch user
+const fetchUser = async (req, res, next) => {
+    const token = req.header('auth-token');
+    if (!token) {
+        res.status(401).send({ errors: "Authenticate using valid token" });
+    } else {
+        try {
+            const data = jwt.verify(token, 'secret_ecom');
+            req.user = data.user;
+            next();
+        } catch (error) {
+            res.status(401).send({ errors: "Please authenticate using a valid token" });
+        }
+    }
+};
+
+
+// endpoint for add to cart 
+app.post('/addtocart',fetchUser,async(req,res)=>{
+    console.log("Added product to Cart",req.body.itemId);
+    let usersData = await Users.findOne({_id:req.user.id});
+    usersData.cartData[req.body.itemId]+= 1;
+    await Users.findOneAndUpdate({_id: req.user.id},{cartData: usersData.cartData});
+    res.send("Added")
+})
+
+// endpoint for deleting product from cart
+app.post("/removecart",fetchUser, async(req,res)=>{
+    console.log("Removed product from Cart",req.body.itemId);
+    let usersData = await Users.findOne({_id:req.user.id});
+    if(usersData.cartData[req.body.itemId]>0)
+    usersData.cartData[req.body.itemId]-= 1;
+    await Users.findOneAndUpdate({_id: req.user.id},{cartData: usersData.cartData});
+    res.send("Removed")
+})
+
+// endpoint for getting cartdata
+app.post('/getCart',fetchUser, async(req,res)=>{
+    console.log("GetCart");
+    let usersData = await Users.findOne({_id:req.user.id});
+    res.json(usersData.cartData);
+
 })
 
 
