@@ -4,13 +4,14 @@ import footer_logo from '../Assets/logobig.png'
 import facebook_icon from '../Assets/facebook.png'
 import instagram_icon from '../Assets/instagram.png'
 import pinterest_icon from '../Assets/pinterest.png'
+import { Link } from "react-router-dom";
 
 const Footer = () =>{
     return(
         <div className="footer">
             <div className="footer-logo">
                 <img src={footer_logo} alt="" />
-                <p>MARKETPLACE</p>
+                <Link to="/"  style={{ textDecoration: "none" }} ><p>STYLESPHERE</p></Link>
             </div>
           
             <div className="footer-social-icon">
