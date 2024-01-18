@@ -109,6 +109,25 @@ app.post('/removeproduct', async(req,res)=>{
     })
 })
 
+app.put('/updateproduct/:productId', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const updatedProduct = req.body;
+
+        // Update the product in the database
+        const result = await Product.updateProduct(productId, updatedProduct);
+
+        if (result) {
+            res.json({ success: true, message: 'Product updated successfully', updatedProduct: result });
+        } else {
+            res.status(404).json({ success: false, message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error('Error updating product:', error);
+        res.status(500).json({ success: false, message: 'Internal Server Error' });
+    }
+});
+
 
 
 // api to fetch all products from database
