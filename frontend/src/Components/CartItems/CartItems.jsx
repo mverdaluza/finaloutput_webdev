@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import './CartItems.css';
-import remove_icon from '../Assets/delete.png';
+import remove_icon from '../Assets/cross_icon.png';
 import { ShopContext } from "../../Context/ShopContext";
 
 const CartItems = () =>{

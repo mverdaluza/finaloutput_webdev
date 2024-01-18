@@ -4,6 +4,8 @@
     align-items: center;
     gap: 10px;
     height: 90vh;
+    margin-bottom: 20vh;
+
 }
 
 .relatedProducts h1 {
@@ -17,6 +19,7 @@
     height: 6px;
     border-radius: 10px;
     background: #252525;
+    
 }
 
 .relatedProducts-items {
