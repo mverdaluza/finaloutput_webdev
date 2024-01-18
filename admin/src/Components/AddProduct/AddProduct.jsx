@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
 import './AddProduct.css'
 import upload_area from '../../assets/upload_area.svg'
 
@@ -47,6 +47,8 @@ const AddProduct = () =>{
                     body: JSON.stringify(product), 
                 }).then((resp)=>resp.json()).then((data)=>{
                     data.success?alert("Product Succesfully Added"):alert("Failed");
+                     // Use navigate to go back to the product list or any other route
+                    navigate('/listproduct');
                 })
             }
         })
