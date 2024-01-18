@@ -162,7 +162,7 @@
       text-transform: uppercase; /* Uppercase text */
     }
     .nav-menu hr {
-      display: none; /* No need for the separator line */
+      display: none;
     }
     .nav-dropdown img.open {
       transform: rotate(180deg);
@@ -177,6 +177,10 @@
     }
     .nav-logo {
       margin-bottom: 10px;
+      align-items: center;
+    }
+    .nav-logo p{
+        display: none;
     }
     .nav-menu {
       height: auto;
@@ -184,5 +188,8 @@
     }
     .nav-menu li {
       margin-bottom: 5px;
+    }
+    .nav-dropdown{
+         align-items: center;
     }
   }

@@ -1,17 +1,13 @@
 import React from "react";
 import './Offers.css'
-import exclusive_image from '../Assets/exclusive_image.png'
+import exclusive_image from '../Assets/offers.png'
 const Offers = () =>{
     return(
         <div className="offers">
-            <div className="offers-left">
-                <h1>BEST</h1>
-                <h1>SELLER PRODUCTS</h1>
-                <button>Check Now</button>
-            </div>
             <div className="offers-right">
-                <img src={exclusive_image} alt="" />
+                <img src={exclusive_image} alt=""  className="offers-image"/>
             </div>
+           
         </div>
     )
 }

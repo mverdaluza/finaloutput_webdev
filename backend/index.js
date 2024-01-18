@@ -16,7 +16,7 @@ mongoose.connect("mongodb+srv://maverdaluza:maverdaluzaMongo2024@cluster0.j2x6ie
 
 // API to check express app
 app.get("/", (req, res)=>{
-    res.send("Express App is running");
+    res.send("React App is running");
 })
 
 // image storage system
@@ -109,12 +109,16 @@ app.post('/removeproduct', async(req,res)=>{
     })
 })
 
+
+
 // api to fetch all products from database
 app.get('/allproducts', async(req, res)=>{
     let products = await Product.find({});
     console.log("Products Fetched");
     res.send(products);
 })
+
+
 
 // schema for user
 const Users = mongoose.model('Users',{
@@ -197,7 +201,7 @@ app.get('/newcollections', async(req, res)=>{
     let products = await Product.find({});
     let newcollection = products.slice(1).slice(-8);  // added new collection
     console.log("New Collection Fetch");
-    res.send(newcollection); // 
+    res.send(newcollection); 
 })
 
 //endpoint for popular in clothing

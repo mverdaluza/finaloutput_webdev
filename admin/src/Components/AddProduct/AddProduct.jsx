@@ -28,7 +28,7 @@ const AddProduct = () =>{
         let formData = new FormData(); // Fix typo
         formData.append('product', image);
 
-        await fetch('http://localhost:4000/upload', {
+        await fetch('http://localhost:8800/upload', {
             method: 'POST',
             headers: { 
                 'Accept': 'application/json',
@@ -38,7 +38,7 @@ const AddProduct = () =>{
         if (responseData.success) {
             product.image = responseData.image_url;
             console.log(product);
-            fetch('http://localhost:4000/addproduct',{
+            fetch('http://localhost:8800/addproduct',{
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

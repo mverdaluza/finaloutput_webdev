@@ -2,16 +2,17 @@
     display: block;
     margin: 30px auto;
     width: 82%;
+    border-radius: 15px;
 }
 .shopcategory-indexSort{
     display: flex;
     margin: 0 170px;
     justify-content: space-between;
     align-items: center; 
+    
 }
 .shopcategory-indexSort p span{
     font-weight: 600;
-
 }
 
 .shopcategory-products{
@@ -83,5 +84,6 @@
 @media(max-width:500px){
     .shopcategory-products{
         grid-template-columns: 1fr 1fr;
+        
     }
 }

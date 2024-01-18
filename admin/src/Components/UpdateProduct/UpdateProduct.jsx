@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './UpdateProduct.css'; // You can create a new CSS file for UpdateProduct styling
+import './UpdateProduct.css'; 
 import upload_area from '../../assets/upload_area.svg'
 
 const UpdateProduct = ({ productId }) => {
@@ -7,14 +7,14 @@ const UpdateProduct = ({ productId }) => {
     const [productDetails, setProductDetails] = useState({
         name: "",
         image: "",
-        category: "women",
+        category: "tops",
         new_price: "",
 
     });
 
     useEffect(() => {
         // Fetch product details based on the productId when the component mounts
-        fetch(`http://localhost:8800/allproducts`)
+        fetch(`http://localhost:4000/allproducts`)
             .then(response => response.json())
             .then(data => {     
                 console.log("Fetched data:", data);  // Log the data received from the server
@@ -80,12 +80,6 @@ const UpdateProduct = ({ productId }) => {
 
             <div className="update-product-price">
                 <div className="updateproduct-item">
-                <p>Price</p>
-                    <input value={productDetails.old_price} onChange={changeHandler} type="text" name="old_price" placeholder="Old Price" />
-                </div>
-
-            <div className="update-product-price">
-                <div className="updateproduct-item">
                     <p>New Price</p>
                     <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder="New Price" />
                 </div>
@@ -95,9 +89,9 @@ const UpdateProduct = ({ productId }) => {
                 <div className="updateproduct-item">
                     <p>Product Category</p>
                     <select value={productDetails.category} onChange={changeHandler} name="category" className="addproduct-selector">
-                        <option value="women">Women</option>
-                        <option value="men">Men</option>
-                        <option value="kid">Kids</option>
+                        <option value="tops">Tops</option>
+                        <option value="buttom">Buttom</option>
+                        <option value="dress">Dress</option>
                     </select>                
                 </div>
             </div>
@@ -108,9 +102,6 @@ const UpdateProduct = ({ productId }) => {
                 </label>
                 <input onChange={imageHandler} type="file" name="image" id="file-input" hidden />
             </div>
-
-            </div>
-
 
             <button onClick={updateButton} className="update-product-btn">Update</button>
         </div>
