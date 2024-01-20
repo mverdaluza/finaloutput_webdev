@@ -1,4 +1,4 @@
-
+// for database purposes only
 import p1_img from "./black_top.jpg";
 import p2_img from "./polo.jpg";
 import p3_img from "./prod3.jpg";

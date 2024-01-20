@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useParams, useNavigate } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import './UpdateProduct.css';
 import upload_area from '../../assets/upload_area.svg';
@@ -17,7 +18,12 @@ const UpdateProduct = () => {
   useEffect(() => {
     if (id) {
       fetch(`http://localhost:4000/allproducts`)
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
         .then((data) => {
           const productToUpdate = data.find((product) => product.id === parseInt(id));
           if (productToUpdate) {
@@ -29,7 +35,7 @@ const UpdateProduct = () => {
       console.error('id is undefined');
     }
   }, [id]);
-
+  
   const imageHandler = (e) => {
     setImage(e.target.files[0]);
   };

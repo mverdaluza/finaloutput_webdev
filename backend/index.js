@@ -157,13 +157,17 @@ const Users = mongoose.model('Users',{
     cartData: {
         type: Object,
     },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
     date:{
         type: Date,
         default: Date.now,
     }
 })
 
-// endpoint for signup 
+// endpoint for signup (client)
 app.post('/signup', async (req, res) => {
 
     let check = await Users.findOne({email: req.body.email});
@@ -210,13 +214,70 @@ app.post('/login', async(req,res)=>{
             res.json({success:true, token})  // generate token if success
         }
         else{
-            res.json({success:false, errors: "Incorrect password"});
+            res.json({success:false, errors: "Incorrect email or password"});
         }
     }
     else{
-        res.json({success:false,errors:"Incorrect email address"});
+        res.json({success:false,errors:"Incorrect email or password"});
     }
 })
+
+// endpoint for signup (admin side)
+app.post('/adminsignup', async (req, res) => {
+    let check = await Users.findOne({email: req.body.email});
+    if (check) {
+        return res.status(400).json({ success: false, errors: "Existing user" });
+    }
+
+    const user = new Users({
+        name: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+        cartData: {},
+        isAdmin: true,
+    });
+
+    await user.save();
+
+    const data = {
+        user:{
+            id: user.id,
+            isAdmin: user.isAdmin,
+        }
+    }
+
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token });
+});
+
+// endpoint for login (admin)
+app.post('/adminlogin', async(req,res)=>{
+    let user = await Users.findOne({email:req.body.email, isAdmin: true});
+    if(user){
+        const passwordCompare = req.body.password === user.password;
+        if(passwordCompare){
+            const data ={
+                user: {
+                    id: user.id,
+                    isAdmin: user.isAdmin,
+                }
+            }
+            const token = jwt.sign(data, 'secret_ecom');  
+            res.json({success:true, token});
+        }
+        else{
+            res.json({success:false, errors: "Incorrect email or password"});
+        }
+    }
+    else{
+        res.json({success:false,errors:"Incorrect email or password"});
+    }
+});
+
+
+
+
+
 
 // endpoint for new collection
 app.get('/newcollections', async(req, res)=>{

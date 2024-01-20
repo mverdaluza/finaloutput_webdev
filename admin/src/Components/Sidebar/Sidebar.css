@@ -5,9 +5,12 @@
     gap: 20px;
     width: 100%;
     max-width: 250px;
-    height: 100vh;
-    background: white;
+    margin: auto; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    align-items: center;
+    text-align: center;
 }
+
 .sidebar-item{
     display: flex;
     align-items: center;
