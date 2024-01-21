@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './AdminLoginSignup.css';
 
-const AdminLoginSignup = () => {
+const AdminLoginSignup = ({ setIsAuthenticated }) => {
     const navigate = useNavigate();
 
     const [state, setState] = useState("Login");
@@ -34,14 +34,17 @@ const AdminLoginSignup = () => {
             alert("An error occurred during signup. Please try again.");
             return;
         }
+        
 
         if (responseData.success) {
             localStorage.setItem('auth-token', responseData.token);
-            navigate("/");
-        } else {
+            setIsAuthenticated(true);
+            navigate("/admin"); // Redirect to the admin page
+          } else {
             alert(responseData.errors);
-        }
-    };
+          }
+        };
+    
 
     const adminLogin = async () => {
         console.log("Admin Login executed", formData);
@@ -64,10 +67,11 @@ const AdminLoginSignup = () => {
 
         if (responseData.success) {
             localStorage.setItem('auth-token', responseData.token);
-            navigate("/");
-        } else {
+            setIsAuthenticated(true);
+            navigate("/admin"); // Redirect to the admin page
+          } else {
             alert(responseData.errors);
-        }
+          }
     };
 
     return (
