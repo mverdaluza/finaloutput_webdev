@@ -5,23 +5,18 @@
     gap: 10px;
     height: 90vh;
     margin-bottom: 20vh;
-
 }
-
 .relatedProducts h1 {
     color: #171717;
     font-size: 50px;
     font-weight: 600;
 }
-
 .relatedProducts hr {
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #252525;
-    
 }
-
 .relatedProducts-items {
     margin: 50px;
     display: flex;
@@ -71,7 +66,6 @@
     }
     .relatedProducts-items {
         gap: 5px;
-
     }
 }
 

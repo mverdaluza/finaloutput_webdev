@@ -88,40 +88,40 @@ const UpdateProduct = () => {
     }
   };
 
-    return (
-        <div className="update-product">
-            <div className="updateproduct-item">
-                <h2>Update Product</h2>
-                <p>Product Name</p>
-                <input value={productDetails.name} onChange={changeHandler} type="text" name="name" placeholder="Update Product Name" />
-            </div>
+  return (
+    <div className="update-product">
+      <div className="updateproduct-item">
+        <h2>Update Product</h2>
+        <p>Product Name</p>
+        <input value={productDetails.name} onChange={changeHandler} type="text" name="name" placeholder="Update Product Name" />
+      </div>
 
-            <div className="update-product-price">
-                <div className="updateproduct-item">
-                    <p>New Price</p>
-                    <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder="Update Price" />
-                </div>
-            </div>
+      <div className="update-product-price">
+        <div className="updateproduct-item">
+          <p>New Price</p>
+          <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder="Update Price" />
+        </div>
+      </div>
 
-            <div className="updateproduct-item">
-                <p>Product Category</p>
-                <select value={productDetails.category} onChange={changeHandler} name="category" className="addproduct-selector">
-                    <option value="tops">Tops</option>
-                    <option value="buttom">Buttom</option>
-                    <option value="dress">Dress</option>
-                </select>                
-            </div>
+      <div className="updateproduct-item">
+        <p>Product Category</p>
+          <select value={productDetails.category} onChange={changeHandler} name="category" className="addproduct-selector">
+            <option value="tops">Tops</option>
+            <option value="buttom">Buttom</option>
+            <option value="dress">Dress</option>
+          </select>                
+      </div>
 
-            <div className="updateproduct-item">
-                <label htmlFor="file-input">
-                    <p>Update Image</p>
-                    <img src={image?URL.createObjectURL(image):upload_area} className="updateproduct-image" alt="" />
-                </label>
-                <input onChange={imageHandler} type="file" name="image" id="file-input" hidden />
-            </div>
+      <div className="updateproduct-item">
+        <label htmlFor="file-input">
+          <p>Update Image</p>
+          <img src={image?URL.createObjectURL(image):upload_area} className="updateproduct-image" alt="" />
+        </label>
+        <input onChange={imageHandler} type="file" name="image" id="file-input" hidden />
+      </div>
 
-            <button onClick={updateButton} className="updateproduct-btn">Update</button>        
-            </div>
+      <button onClick={updateButton} className="updateproduct-btn">Update</button>        
+    </div>
     );
 }
 

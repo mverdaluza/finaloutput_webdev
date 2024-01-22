@@ -28,6 +28,7 @@ const Navbar = () => {
           <li onClick={() => setMenu("tops")}><Link style={{ textDecoration: "none", color: "white"}} to="/tops">Tops</Link>{menu === "tops"?<hr />:<></>}</li>
           <li onClick={() => setMenu("buttom")}><Link style={{ textDecoration: "none",color: "white" }} to="/buttom">Buttom</Link>{menu === "buttom"?<hr />:<></>}</li>
           <li onClick={() => setMenu("dress")}><Link style={{ textDecoration: "none", color: "white"}} to="/dress">Dress</Link>{menu === "dress"?<hr />:<></>}</li>
+          <li onClick={() => setMenu("about")}><Link style={{ textDecoration: "none", color: "white"}} to="/about">About</Link>{menu === "about"?<hr />:<></>}</li>
           {localStorage.getItem("auth-token") ? (
             <li onClick={() => {localStorage.removeItem("auth-token"); window.location.replace('/')}}><span>Logout</span></li>
           ):(<li><Link style={{ textDecoration: "none", color: "white" }}  to="/login">Login</Link></li>

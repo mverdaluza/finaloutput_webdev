@@ -6,8 +6,11 @@
     height: 740px;
     padding: 10px 50px;
     margin: 30px;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
     border-radius: 6px;
     background: white;
+
 }
 .listproduct-format-main{
     display: grid;
@@ -34,7 +37,7 @@
     overflow-y: auto;
 }
 .update-btn{
-    background: violet;
+    background: #d15bff;
     font-size: 16px;
     font-weight: 550;
     font-family: 'poppins';

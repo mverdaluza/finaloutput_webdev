@@ -1,12 +1,13 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 100px;
+    padding-bottom: 40vh;
     gap: 20px;
     width: 100%;
     max-width: 250px;
-    margin: auto; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    margin: auto; 
+    justify-content: center; 
     align-items: center;
     text-align: center;
 }
@@ -21,6 +22,10 @@
     background: #f6f6f6;
     gap: 20px;
     cursor: pointer;
+}
+
+.sidebar-item p {
+    font-size: 21px;
 }
 
 @media(max-width:800px){
@@ -39,16 +44,20 @@
 
 @media (max-width: 500px) {
     .sidebar {
+        margin-top: 20vh;
         padding: 20px 0;
+        padding-bottom: 20vh;
         flex-direction: column;
         width: 100%;
         max-width: none;
         height: auto;
         justify-content: center;
     }
-
     .sidebar-item {
         margin: 0;
         width: 100%;
+    }
+    .sidebar-item p{
+        font-size: 18px;
     }
 }

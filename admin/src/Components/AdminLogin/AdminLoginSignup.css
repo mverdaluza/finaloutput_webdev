@@ -2,7 +2,8 @@
     width: 100%;
     height: 80vh;
     background: #fcccff;
-    padding-top: 100px;
+    padding-top: 15vh;
+    padding-bottom: 20vh;
 }
 .loginsignup-container{
     width: 600px;
@@ -15,7 +16,6 @@
 .loginsignup-container h1{
     margin: 20px 0px;
     text-align: center;
-    
 }
 .loginsignup-fields{
     display: flex;

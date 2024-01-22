@@ -47,7 +47,7 @@ const AddProduct = () =>{
                     body: JSON.stringify(product), 
                 }).then((resp)=>resp.json()).then((data)=>{
                     data.success?alert("Product Succesfully Added"):alert("Failed");
-                     // Use navigate to go back to the product list or any other route
+                     // Use navigate to go back to the product list
                     navigate('/listproduct');
                 })
             }

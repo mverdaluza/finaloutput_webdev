@@ -7,6 +7,7 @@ import Product from './Pages/Product'
 import Cart from './Pages/Cart'
 import LoginSignup from './Pages/LoginSignup'
 import Footer from './Components/Footer/Footer';
+import About from './Components/About/About';
 import banner from './Components/Assets/newbanner.png';
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
           <Route path='/buttom' element={<ShopCategory banner={banner} category="buttom"/>}></Route>
           <Route path='/dress' element={<ShopCategory banner={banner} category="dress"/>}></Route>
           <Route path='product' element={<Product/>}>
-            <Route path=':productId' element={<Product/>}></Route>
+          <Route path=':productId' element={<Product/>}></Route>
           </Route>
+          <Route path='/about' element={<About/>}></Route>
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/login' element={<LoginSignup/>}></Route>
         </Routes>

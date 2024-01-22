@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './AdminFooter.css'
-import footer_logo from '../../assets/styleslogo.png'
+import footer_logo from '../../assets/stylespherefooter.png'
 import facebook_icon from '../../assets/fb.png'
 import instagram_icon from '../../assets/ig.png'
 import pinterest_icon from '../../assets/pint.png'

@@ -10,14 +10,12 @@ const Description = () =>{
             </div>
             <div className="desc-desc">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit tempore dolores culpa optio
-                     fugiat deserunt autem earum obcaecati consectetur nam enim, cum quae aliquid vel excepturi 
-                     cupiditate ducimus odit dolor tenetur maiores, ipsa exercitationem repudiandae quasi. 
-                     A, omnis quaerat architecto animi atque eveniet cumque voluptatem esse praesentium ea quo,
-                      iusto blanditiis soluta labore sunt? Quasi delectus illo ipsam a rerum temporibus vero! Sapiente, 
-                      autem! Omnis quaerat perspiciatis ipsum dolores qui.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum error molestiae itaque optio dolore labore aliquid obcaecati beatae commodi fugit!
-                    </p>
+                    fugiat deserunt autem earum obcaecati consectetur nam enim, cum quae aliquid vel excepturi 
+                    cupiditate ducimus odit dolor tenetur maiores, ipsa exercitationem repudiandae quasi. 
+                    A, omnis quaerat architecto animi atque eveniet cumque voluptatem esse praesentium ea quo,
+                    iusto blanditiis soluta labore sunt? Quasi delectus illo ipsam a rerum temporibus vero! Sapiente, 
+                    autem! Omnis quaerat perspiciatis ipsum dolores qui.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum error molestiae itaque optio dolore labore aliquid obcaecati beatae commodi fugit!</p>
             </div>
         </div>
     )
